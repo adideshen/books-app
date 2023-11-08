@@ -12,8 +12,6 @@ export const UserButton = () => {
   const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
   const userName = authUser.name;
 
-  const val = 9;
-
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
