@@ -1,0 +1,44 @@
+html, body {
+    background-image: url('/src/components/book-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.home {
+    text-align: center;
+    position: relative;
+  }
+
+  
+.home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(55, 53, 53);
+    margin-top: 40px;
+    height: 200px;
+  }
+
+  .welcome {
+    font-size: 55px;
+    font-weight: 1000;
+    color: rgb(55, 53, 53);
+    text-shadow: 2px 2px 4px rgba(142, 136, 136, 0.5);
+    margin-bottom: 20px;
+  }
+
+  .quote {
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-size: 20px;
+  }
+  
+.search-bar-container {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+  }
