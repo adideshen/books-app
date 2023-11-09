@@ -22,7 +22,7 @@ export const UserButton = () => {
     if (!isLoggedIn) {
       navigate("/");
     }
-  }, [authUser, isLoggedIn]);
+  }, [isLoggedIn]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);

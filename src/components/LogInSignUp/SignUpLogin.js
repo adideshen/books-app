@@ -7,6 +7,7 @@ import "./SignUpLogin.css";
 import userIcon from "./user-solid.svg";
 import emailIcon from "./envelope-solid.svg";
 import lockIcon from "./lock-solid.svg";
+import { act } from "react-dom/test-utils";
 
 export const SignUpLogin = () => {
   const [action, setAction] = useState("Sign Up");
@@ -22,11 +23,13 @@ export const SignUpLogin = () => {
     if (isLoggedIn) {
       navigate("/");
     }
-  }, [authUser, isLoggedIn]);
+  }, [isLoggedIn]);
 
   const handleSignUp = (event) => {
     event.preventDefault();
-    setAction("Sign Up");
+    if (action === "Login") {
+      setAction("Sign Up");
+    }
     if (name && email && password) {
       setAuthUser({ name: name, email: email, password: password });
       setIsLoggedIn(true);
@@ -35,7 +38,9 @@ export const SignUpLogin = () => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    setAction("Login");
+    if (action === "Sign Up") {
+      setAction("Login");
+    }
     const name = "user"; // import username
     if (email && password) {
       setAuthUser({ name: name, email: email, password: password });
