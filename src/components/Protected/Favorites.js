@@ -1,10 +1,24 @@
 import React from "react";
+import { redirect, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/AuthContext";
 import "./Favorites.css";
 
-export function userLoader() {
-  return false;
-}
+
+
+export const userLoader = (isLoggedIn, navigate) => 
+  () =>
+    {
+      return false;
+      // const authService = useAuth();
+      // const isLoggedIn = authService.isLoggedIn;
+      // if (!isLoggedIn) {
+      //   const navigate = useNavigate();
+      //   navigate("/");
+      // }
+      // return null;
+    }
+
+
 
 export const Favorites = () => {
   const authService = useAuth();
