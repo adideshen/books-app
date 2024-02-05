@@ -27,22 +27,24 @@ export function AuthProvider(props) {
   const RequestLogin = async (details) => {
     try {
       const response = await axios.post(loginEndpoint, details);
-      // console.log(response.data.email);
       setAuthUser({ name: response.data.name , email: details.email, password: details.password });
       setIsLoggedIn(true);
     } catch (error) {
-      // alert("Login failed: " + error.response.data)
       console.log("Login failed: ", error.response.data)
     }
+  }
+
+  const setLogout = () => {
+    setAuthUser(null);
+    setIsLoggedIn(false);
   }
 
   const value = {
     RequestLogin,
     RequestSignup,
     authUser,
-    // setAuthUser,
     isLoggedIn,
-    // setIsLoggedIn,
+    setLogout,
   };
 
   return (

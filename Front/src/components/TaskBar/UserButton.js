@@ -10,7 +10,8 @@ import { useAuth } from "../../Context/AuthContext";
 import "./UserButton.css";
 
 export const UserButton = () => {
-  const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
+  // const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
+  const { RequestLogin, RequestSignup, authUser, isLoggedIn, setLogout } = useAuth();
   const userName = authUser.name;
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -30,8 +31,7 @@ export const UserButton = () => {
   };
 
   const handleLogout = () => {
-    setAuthUser(null);
-    setIsLoggedIn(false);
+    setLogout();
   };
 
   const handleClose = () => {

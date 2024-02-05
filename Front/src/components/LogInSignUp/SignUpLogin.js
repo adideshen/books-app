@@ -9,16 +9,13 @@ import userIcon from "./user-solid.svg";
 import emailIcon from "./envelope-solid.svg";
 import lockIcon from "./lock-solid.svg";
 
-// const signupEndpoint = "http://localhost:3001/users/sign-up";
-// const loginEndpoint = "http://localhost:3001/users/login";
-
 export const SignUpLogin = () => {
   const [action, setAction] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { RequestLogin, RequestSignup, authUser, isLoggedIn } = useAuth();
+  const { RequestLogin, RequestSignup, authUser, isLoggedIn, setLogout } = useAuth();
 
   const navigate = useNavigate();
 
@@ -36,10 +33,6 @@ export const SignUpLogin = () => {
     if (name && email && password) {
       try {
         await RequestSignup({name, email, password});
-        // const response = await axios.post(signupEndpoint, {name, email, password});
-        // console.log(response.data);
-        // setAuthUser({ name: name, email: email, password: password });
-        // setIsLoggedIn(true);
       } catch (error) {
         console.log("Signup failed: ", error);
       }
@@ -54,10 +47,6 @@ export const SignUpLogin = () => {
     if (email && password) {;
       try {
         await RequestLogin({email, password});
-        // const response = await axios.post(loginEndpoint, {email, password});
-        // console.log(response.data);
-        // setAuthUser({ name: response.data.name , email: email, password: password });
-        // setIsLoggedIn(true);
       } catch (error) {
         // alert("Login failed: " + error.response.data)
         console.log("Login failed: ", error)
