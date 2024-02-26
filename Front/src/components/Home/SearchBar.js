@@ -13,7 +13,7 @@ export const SearchBar = ({ setResults }) => {
       .then((json) => {
         setResults(json.items);
         console.log(json);
-      }); // makes the APIs calls
+      });
   };
 
   const handleChange = (value) => {
@@ -33,9 +33,6 @@ export const SearchBar = ({ setResults }) => {
           onChange={handleChange}
           className="SearchBar"
         />
-        {/* <div className="search-icon">
-                    <img className='logo' src={searchIcon} />
-                </div> */}
       </div>
     </div>
   );
