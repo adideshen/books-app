@@ -10,7 +10,6 @@ import { useAuth } from "../../Context/AuthContext";
 import "./UserButton.css";
 
 export const UserButton = () => {
-  // const { authUser, setAuthUser, isLoggedIn, setIsLoggedIn } = useAuth();
   const { RequestLogin, RequestSignup, authUser, isLoggedIn, setLogout } = useAuth();
   const userName = authUser.name;
 

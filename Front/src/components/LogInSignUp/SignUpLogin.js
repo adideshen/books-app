@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { HomeButton } from "../TaskBar/HomeButton";
 import { useAuth } from "../../Context/AuthContext";
 import "./SignUpLogin.css";
-import axios from "axios";
 
 import userIcon from "./user-solid.svg";
 import emailIcon from "./envelope-solid.svg";

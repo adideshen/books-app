@@ -1,6 +1,5 @@
 import React from "react";
 import { HomeButton } from "./HomeButton";
-import { FavoritesButton } from "./FavoritesButton";
 import { SighUpLoginButton } from "./SignUpLoginButton";
 import { useAuth } from "../../Context/AuthContext";
 import { UserButton } from "./UserButton";

@@ -56,7 +56,6 @@ export const BookDetails = () => {
               <p className="book-info"><strong>Published Date:</strong> {bookData.volumeInfo.publishedDate}</p>
               <p className="book-info"><strong>Description:</strong> </p>
             <div className="scrollable-text">
-              {/* <div className="description" dangerouslySetInnerHTML={{__html: bookData.volumeInfo.description}} />           */}
               {bookData.volumeInfo.description && (
                 <div className="description">{htmlFrom(bookData.volumeInfo.description)}</div>
               )}

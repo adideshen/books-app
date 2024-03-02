@@ -1,6 +1,5 @@
 import React from "react";
-import { redirect, useNavigate } from "react-router-dom";
-import { useAuth } from "../../Context/AuthContext";
+import { redirect } from "react-router-dom";
 import "./Favorites.css";
 
 export function userLoader( isLoggedIn ) {
