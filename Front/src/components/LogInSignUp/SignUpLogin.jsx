@@ -14,7 +14,7 @@ export const SignUpLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { RequestLogin, RequestSignup, authUser, isLoggedIn, setLogout } = useAuth();
+  const { RequestLogin, RequestSignup, isLoggedIn } = useAuth();
 
   const navigate = useNavigate();
 
@@ -47,7 +47,6 @@ export const SignUpLogin = () => {
       try {
         await RequestLogin({email, password});
       } catch (error) {
-        // alert("Login failed: " + error.response.data)
         console.log("Login failed: ", error)
       }
     }

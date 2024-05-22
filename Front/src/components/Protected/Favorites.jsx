@@ -2,7 +2,7 @@ import React from "react";
 import { redirect } from "react-router-dom";
 import "./Favorites.css";
 
-export function userLoader( isLoggedIn ) {
+export function UserLoader( isLoggedIn ) {
       if (!isLoggedIn) {
         console.log("youre not logged in");
         return redirect("/");

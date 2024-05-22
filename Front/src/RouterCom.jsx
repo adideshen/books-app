@@ -2,7 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Home } from "./components/Home/Home";
 import { BookDetails, bookIdLoader } from "./components/BookDetails";
 import { SignUpLogin } from "./components/LogInSignUp/SignUpLogin";
-import { Favorites, userLoader } from "./components/Protected/Favorites";
+import { Favorites, UserLoader } from "./components/Protected/Favorites";
 import { useAuth } from "./Context/AuthContext";
 
 export const RouterCom = () => {
@@ -20,7 +20,7 @@ export const RouterCom = () => {
     {
       path: "/favorites",
       element: <Favorites />,
-      loader: userLoader,
+      loader: UserLoader,
     },
     {
       path: "/book-details/:bookId",
