@@ -3,6 +3,7 @@ const { emailExistsQuery } = require("./emailExists");
 const { insertUserQuery } = require("./insertUser");
 const { Client } = require("pg");
 
+// setting up the PostgreSQL client
 const client = new Client({
   user: "postgres",
   host: "localhost",
@@ -16,9 +17,11 @@ client.connect(function (err) {
   console.log("Connected!");
 });
 
+// setting up Express
 const express = require("express");
 const app = express();
 
+// middleware for handling CORS
 app.use((request, response, next) => {
   response.header("Access-Control-Allow-Origin", "http://localhost:3000");
   response.header(
@@ -32,9 +35,10 @@ app.use((request, response, next) => {
   next();
 });
 
+// middleware for parsing JSON
 app.use(express.json());
-const port = 3001;
 
+// Login route
 app.post("/users/login", async (request, response) => {
   try {
     const userEmail = request.body.email.toLowerCase();
@@ -56,6 +60,7 @@ app.post("/users/login", async (request, response) => {
   }
 });
 
+// Sign-Up route
 app.post("/users/sign-up", async (request, response) => {
   try {
     const userEmail = request.body.email.toLowerCase();
@@ -81,6 +86,8 @@ app.post("/users/sign-up", async (request, response) => {
   }
 });
 
+// starting the server
+const port = 3001;
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
